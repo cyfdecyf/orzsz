@@ -9,15 +9,16 @@ fi
 
 function send1() {
     local file
-    file=$1
+    file="$1"
 
     echo `basename $file`
-    base64 -b 76 $file
+    # base64 on OS X is weird about -b option.
+    # For number larger than 80, you need to add =.
+    /usr/bin/base64 -b=512 "$file"
     echo
 }
 
-send1 $FILE
+send1 "$FILE"
 
 # Signal end of transfer.
 echo
-

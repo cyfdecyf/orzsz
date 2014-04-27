@@ -29,5 +29,4 @@ Repeat the first three steps to transfer multiple files.
 
 # Problems
 
-- The silient coprocess action in iTerm2 still displays the script's output
 - Not reliable for large file transfer
